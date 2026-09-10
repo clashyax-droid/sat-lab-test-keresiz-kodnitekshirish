@@ -274,215 +274,110 @@ function updateScores(){
 /* INITIAL */
 
 updateScores();
-/* ===== PRACTICE CARD ===== */
-.papers-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-    padding: 20px 0;
-}
+// ============================================================
+// PRACTICE #1 — Test kartasi (sinov uchun, ichi bo'sh)
+// ============================================================
 
-.practice-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    border: 2px solid transparent;
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-.practice-card:hover {
-    transform: translateY(-4px);
-    border-color: #111;
-}
-
-/* --- Header (Paper # va ikonka) --- */
-.practice-card .card-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.practice-card .card-icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: #f3f4f6;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.practice-card .card-icon-box svg {
-    width: 24px;
-    height: 24px;
-    color: #1f2937;
-}
-
-.practice-card .card-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #111827;
-}
-
-/* --- Badge qatori --- */
-.practice-card .card-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 14px 0 10px;
-}
-
-.practice-card .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid transparent;
-}
-
-.practice-card .badge-version {
-    background: linear-gradient(to right, #eff6ff, #eef2ff);
-    border-color: rgba(59, 130, 246, 0.2);
-    color: #1d4ed8;
-}
-
-.practice-card .badge-version .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #3b82f6;
-}
-
-.practice-card .badge-type {
-    background: #f3f4f6;
-    border-color: rgba(209, 213, 219, 0.7);
-    color: #374151;
-}
-
-.practice-card .badge-type svg {
-    width: 16px;
-    height: 16px;
-}
-
-/* --- Statistika (2 ta karta) --- */
-.practice-card .card-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 16px 0;
-}
-
-.practice-card .stat-box {
-    background: #f9fafb;
-    border: 1px solid rgba(229, 231, 235, 0.8);
-    border-radius: 10px;
-    padding: 12px;
-}
-
-.practice-card .stat-label {
-    font-size: 13px;
-    color: #6b7280;
-    margin: 0 0 4px;
-}
-
-.practice-card .stat-value {
-    font-size: 18px;
-    font-weight: 600;
-    color: #111827;
-    margin: 0;
-}
-
-/* --- Tugmalar --- */
-.practice-card .card-actions {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.practice-card .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, opacity 0.2s ease;
-    border: none;
-    font-family: inherit;
-}
-
-.practice-card .btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-.practice-card .btn-primary {
-    background: #000;
-    color: #fff;
-}
-
-.practice-card .btn-primary:hover {
-    background: #1f2937;
-}
-
-.practice-card .btn-outline {
-    background: #fff;
-    color: #111;
-    border: 1px solid #d1d5db;
-    font-weight: 500;
-}
-
-.practice-card .btn-outline:hover {
-    background: #f9fafb;
-}
-
-/* --- Dark mode (ixtiyoriy) --- */
-@media (prefers-color-scheme: dark) {
-    .practice-card {
-        background: #1f2937;
+// Practice ma'lumotlari (keyinchalik to'ldirasiz)
+const practiceData = [
+    {
+        id: "practice-1",
+        paperNumber: 87,          // Paper #87
+        version: "Medium",        // Version Medium
+        type: "Practice Test",    // Practice Test badge
+        peopleTook: 731,          // People took: 731
+        lastScore: "Not taken",   // Your last score
     }
-    .practice-card .card-title,
-    .practice-card .stat-value {
-        color: #f9fafb;
-    }
-    .practice-card .card-icon-box {
-        background: #374151;
-    }
-    .practice-card .card-icon-box svg {
-        color: #e5e7eb;
-    }
-    .practice-card .badge-type {
-        background: #374151;
-        color: #d1d5db;
-    }
-    .practice-card .stat-box {
-        background: #111827;
-        border-color: #374151;
-    }
-    .practice-card .stat-label {
-        color: #9ca3af;
-    }
-    .practice-card .btn-primary {
-        background: #fff;
-        color: #000;
-    }
-    .practice-card .btn-outline {
-        background: #1f2937;
-        color: #f9fafb;
-        border-color: #4b5563;
-    }
+];
+
+// SVG ikonkalar (inline)
+const icons = {
+    document: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+    book: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
+    play: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 8l6 4-6 4V8z"/></svg>`,
+    chat: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`
+};
+
+// Bitta karta HTML ini yaratish
+function createPracticeCard(data) {
+    const card = document.createElement("div");
+    card.className = "practice-card";
+    card.id = data.id;
+
+    card.innerHTML = `
+        <!-- Header -->
+        <div class="card-header">
+            <div class="card-icon-box">${icons.document}</div>
+            <div class="card-title">Paper #${data.paperNumber}</div>
+        </div>
+
+        <!-- Badges -->
+        <div class="card-badges">
+            <div class="badge badge-version">
+                <span class="dot"></span>
+                <span>Version ${data.version}</span>
+            </div>
+            <div class="badge badge-type">
+                ${icons.book}
+                <span>${data.type}</span>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="card-stats">
+            <div class="stat-box">
+                <p class="stat-label">People took</p>
+                <p class="stat-value">${data.peopleTook}</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Your last score</p>
+                <p class="stat-value">${data.lastScore}</p>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="card-actions">
+            <button class="btn btn-primary" onclick="startPractice('${data.id}')">
+                ${icons.play}
+                <span>Start Test</span>
+            </button>
+            <button class="btn btn-outline" onclick="discussPractice('${data.id}')">
+                ${icons.chat}
+                <span>Discuss</span>
+            </button>
+        </div>
+    `;
+
+    return card;
 }
+
+// Kartalarni sahifaga qo'shish
+function renderPracticeCards() {
+    const container = document.getElementById("papersContainer");
+    if (!container) {
+        console.warn("papersContainer topilmadi!");
+        return;
+    }
+
+    container.innerHTML = ""; // tozalash
+    practiceData.forEach(item => {
+        container.appendChild(createPracticeCard(item));
+    });
+}
+
+// Start Test bosilganda
+function startPractice(id) {
+    console.log("Start Test bosildi:", id);
+    // Bu yerga keyinchalik testni boshlash kodini yozasiz
+    alert("Practice #1 boshlanmoqda... (hozircha bo'sh)");
+}
+
+// Discuss bosilganda
+function discussPractice(id) {
+    console.log("Discuss bosildi:", id);
+    // Bu yerga keyinchalik discuss sahifasiga o'tish kodini yozasiz
+    alert("Discuss: " + id);
+}
+
+// Sahifa yuklanganda ishga tushirish
+document.addEventListener("DOMContentLoaded", renderPracticeCards);
