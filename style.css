@@ -828,3 +828,215 @@ input[type="range"]::-moz-range-thumb{
   }
 
 }
+/* ===== PRACTICE CARD ===== */
+.papers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.practice-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.practice-card:hover {
+    transform: translateY(-4px);
+    border-color: #111;
+}
+
+/* --- Header (Paper # va ikonka) --- */
+.practice-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.practice-card .card-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #f3f4f6;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.practice-card .card-icon-box svg {
+    width: 24px;
+    height: 24px;
+    color: #1f2937;
+}
+
+.practice-card .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* --- Badge qatori --- */
+.practice-card .card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 10px;
+}
+
+.practice-card .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.practice-card .badge-version {
+    background: linear-gradient(to right, #eff6ff, #eef2ff);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #1d4ed8;
+}
+
+.practice-card .badge-version .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3b82f6;
+}
+
+.practice-card .badge-type {
+    background: #f3f4f6;
+    border-color: rgba(209, 213, 219, 0.7);
+    color: #374151;
+}
+
+.practice-card .badge-type svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Statistika (2 ta karta) --- */
+.practice-card .card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.practice-card .stat-box {
+    background: #f9fafb;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.practice-card .stat-label {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 4px;
+}
+
+.practice-card .stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+/* --- Tugmalar --- */
+.practice-card .card-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.practice-card .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    border: none;
+    font-family: inherit;
+}
+
+.practice-card .btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.practice-card .btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.practice-card .btn-primary:hover {
+    background: #1f2937;
+}
+
+.practice-card .btn-outline {
+    background: #fff;
+    color: #111;
+    border: 1px solid #d1d5db;
+    font-weight: 500;
+}
+
+.practice-card .btn-outline:hover {
+    background: #f9fafb;
+}
+
+/* --- Dark mode (ixtiyoriy) --- */
+@media (prefers-color-scheme: dark) {
+    .practice-card {
+        background: #1f2937;
+    }
+    .practice-card .card-title,
+    .practice-card .stat-value {
+        color: #f9fafb;
+    }
+    .practice-card .card-icon-box {
+        background: #374151;
+    }
+    .practice-card .card-icon-box svg {
+        color: #e5e7eb;
+    }
+    .practice-card .badge-type {
+        background: #374151;
+        color: #d1d5db;
+    }
+    .practice-card .stat-box {
+        background: #111827;
+        border-color: #374151;
+    }
+    .practice-card .stat-label {
+        color: #9ca3af;
+    }
+    .practice-card .btn-primary {
+        background: #fff;
+        color: #000;
+    }
+    .practice-card .btn-outline {
+        background: #1f2937;
+        color: #f9fafb;
+        border-color: #4b5563;
+    }
+}
